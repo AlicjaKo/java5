@@ -1,4 +1,6 @@
 package myapp;
+import java.util.HashSet;
+import java.util.Set;
 
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ final class App {
         Scanner scanner = new Scanner(System.in);
         SocialMediaPlatform platform = new SocialMediaPlatform();
         boolean running = true;
+        User u = new User("Sam");
 
         while (running) {
             System.out.println("Enter a command (addUser, removeUser, addFriend, removeFriend, viewFriends, exit):");
@@ -18,22 +21,22 @@ final class App {
 
             switch (command) {
                 case "addUser":
-                    //TODO: Implement the functionality
+                    platform.addUser(u);
                     break;
                 case "removeUser":
-                    //TODO: Implement the functionality
+                    platform.removeUser(u);
                     break;
                 case "addFriend":
-                    //TODO: Implement the functionality
+                    platform.addFriend(u, u);
                     break;
                 case "removeFriend":
-                    //TODO: Implement the functionality
+                    platform.removeFriend(u, u);
                     break;
                 case "viewFriends":
-                    //TODO: Implement the functionality
+                    platform.viewFriends(u);
                     break;
                 case "exit":
-                    //TODO: Implement the functionality
+                    System.out.println("Thank you for visiting uor platform!");
                     break;
                 default:
                     System.out.println("Invalid command.");

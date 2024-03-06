@@ -1,6 +1,7 @@
 package myapp;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class User {
@@ -8,22 +9,25 @@ public class User {
     private Set<User> friends;
 
     public User(String username) {
-        //TODO: Implement the functionality
+        this.username = username;
+        this.friends = new HashSet<>();
     }
 
     public String getUsername() {
-        //TODO: Implement the functionality
+        return username;
     }
 
     public Set<User> getFriends() {
-        //TODO: Implement the functionality
+        return friends;
     }
 
     public void addFriend(User friend) {
-        //TODO: Implement the functionality
+        friends.add(friend);
     }
 
     public void removeFriend(User friend) {
-        //TODO: Implement the functionality
+        friends.remove(friend);
     }
+
+
 }

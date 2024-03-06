@@ -7,26 +7,42 @@ public class RetailStore {
     private List<Item> items;
 
     public RetailStore() {
-        //TODO: Implement the functionality
+        this.items = new ArrayList<>();
     }
 
     public void addItem(Item item) {
-        //TODO: Implement the functionality
+        items.add(item);
     }
 
     public void removeItem(String itemName) {
-        //TODO: Implement the functionality
+        for (Item i : items) {
+            if (i.getName().equals(itemName)) {
+                items.remove(i);
+                break;
+            }
+        }
     }
 
     public void updateItem(String itemName, double newPrice, int newQuantity) {
-        //TODO: Implement the functionality
+        Item b = new Item(itemName, newPrice, newQuantity);
+        for (int i = 0; i < items.size(); i++) {
+            Item currentItem = items.get(i);
+            if (currentItem.getName().equals(itemName)) {
+                items.set(i, b);
+                break;
+            }
+        }
     }
 
     public void viewItems() {
-        //TODO: Implement the functionality
+        System.out.println("Current items in store:");
+        for (Item item : items) {
+            System.out.println(item);
+        }
     }
+    
 
     public List<Item> getItems(){
-        //TODO: Implement the functionality
+        return items;
     }
 }

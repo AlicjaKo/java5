@@ -1,27 +1,36 @@
 package myapp;
 
 public class Item {
+    private String name;
+    private double price;
+    private int quantity;
     public Item(String name, double price, int quantity) {
-        // TODO: Implement the functionality
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
     }
 
     public String getName() {
-        // TODO: Implement the functionality
+        return this.name;
     }
 
     public double getPrice() {
-        // TODO: Implement the functionality
+        return this.price;
     }
 
     public void setPrice(double price) {
-        // TODO: Implement the functionality
+        this.price = price;
     }
 
     public int getQuantity() {
-        // TODO: Implement the functionality
+        return this.quantity;
     }
 
     public void setQuantity(int quantity) {
-        // TODO: Implement the functionality
+    this.quantity = quantity;
+    }
+
+    public String toString(){
+        return this.name + " - Price: Eur " + this.price + " - Quantity: " + this.quantity;
     }
 }

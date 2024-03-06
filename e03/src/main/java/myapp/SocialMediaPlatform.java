@@ -7,34 +7,45 @@ public class SocialMediaPlatform {
     private Set<User> users;
 
     public SocialMediaPlatform() {
-        //TODO: Implement the functionality
+        this.users = new HashSet<>();
     }
 
     public void addUser(User user) {
-        //TODO: Implement the functionality
+        users.add(user);
     }
 
     public boolean removeUser(User user) {
-        //TODO: Implement the functionality
+        users.remove(user);
+        return (!users.contains(user));
     }
 
     public boolean addFriend(User user, User friend) {
-        //TODO: Implement the functionality
-    }
+        user.addFriend(friend);
+        friend.addFriend(user);
+        return (user.getFriends().contains(friend));
+    }    
 
     public boolean removeFriend(User user, User friend) {
-        //TODO: Implement the functionality
+        user.removeFriend(friend);
+        friend.removeFriend(user);
+        return (!user.getFriends().contains(friend));
     }
 
     public void viewFriends(User user) {
-        //TODO: Implement the functionality
+       user.getFriends();
     }
 
     public Set<User> getUsers() {
-        //TODO: Implement the functionality
+        return users;
     }
 
     public User getUserByUsername(String username) {
-        //TODO: Implement the functionality
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null; 
     }
+    
 }

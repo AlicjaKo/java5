@@ -23,21 +23,25 @@ final class App {
 
             int choice = scanner.nextInt();
 
+            Item i = new Item("Banana", 5, 2);
+
+            retailStore.addItem(i);
+
             switch (choice) {
                 case 1:
-                    //TODO: Implement the functionality
+                    retailStore.addItem(i);
                     break;
                 case 2:
-                    //TODO: Implement the functionality
+                    retailStore.removeItem(i.getName());
                     break;
                 case 3:
-                    //TODO: Implement the functionality
+                    retailStore.updateItem("Apple", 1, 8);
                     break;
                 case 4:
-                    //TODO: Implement the functionality
+                    retailStore.viewItems();
                     break;
                 case 5:
-                    //TODO: Implement the functionality
+                    System.out.println("Thank you for visiting us :)");
                     break;
                 default:
                     break;
